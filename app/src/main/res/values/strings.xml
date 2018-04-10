@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Project_I</string>
+    <string name="japan">日本語</string>
+    <string name="korea">한국어</string>
+    <string name="title">Personal App</string>
+    <string name="b1">Study</string>
+    <string name="b2">NotePad</string>
+    <string name="b3">Schedule</string>
+    <string name="lorem_ipsum">lorem_ipsum</string>
+</resources>
