@@ -19,7 +19,12 @@
         <activity android:name=".StudyActivity" />
         <activity android:name=".ninhonActivity" />
         <activity android:name=".hangugoActivity" />
-        <activity android:name=".CardActivity"></activity>
+        <activity android:name=".CardActivity" />
+        <activity android:name=".InsertWordActivity"></activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

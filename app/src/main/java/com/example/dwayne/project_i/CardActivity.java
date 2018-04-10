@@ -8,13 +8,14 @@ import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.view.ViewGroup;
 
 public class CardActivity extends FragmentActivity {
 
-    private int NUM_PAGES = 5;
+    private int NUM_PAGES = 0;
     private ViewPager mPager;
     private PagerAdapter mPagerAdapter;
+
+    CardDbHelper mDbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class CardActivity extends FragmentActivity {
         mPager = (ViewPager) findViewById(R.id.pager);
         mPagerAdapter = new CardAdapter(getSupportFragmentManager());
         mPager.setAdapter(mPagerAdapter);
+        mDbHelper = new CardDbHelper(this);
     }
 
     private class CardAdapter extends FragmentStatePagerAdapter {
@@ -34,7 +36,7 @@ public class CardActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return CardFragment.create(position);
+            return CardFragment.create(position, mDbHelper);
         }
 
         @Override
@@ -42,5 +44,6 @@ public class CardActivity extends FragmentActivity {
             return NUM_PAGES;
         }
     }
+
 
 }
